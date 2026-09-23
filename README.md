@@ -1,8 +1,8 @@
-# Simulando 📝
+# Simulando
 
 Plataforma web de simulados com correção automática, desenvolvida como **Trabalho de Conclusão de Curso** do técnico em Informática para Internet (ETEC Astor de Mattos Carvalho, 2025).
 
-🔗 **Acesse online:** https://simulando.byethost15.com/
+**Acesse online:** https://simulando.byethost15.com/
 
 ## O que a plataforma faz
 
