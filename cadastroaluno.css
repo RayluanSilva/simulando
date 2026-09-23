@@ -1,0 +1,526 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#topo {
+  width: 100%;
+  height: 9%;
+  background-color: #245dc6;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding: 0 2%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#topo2 {
+  width: 100%;
+  height: 1%;
+  background-color: #219adb;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  z-index: 999;
+}
+
+#logo {
+  width: 190px;
+  height: auto;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+body {
+  background-color: #56adef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#containerform {
+  width: 80%;
+  height: 740px;
+  margin-right: auto;
+  margin-top: 5%;
+  background: linear-gradient(135deg, #7cb9ec 0%, #62a6f5 100%);
+  box-shadow: 1px 3px 8px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  position: absolute;
+  display: flex;
+}
+
+#aluno {
+  width: 95%;
+  height: 94%;
+  margin-top: 1.5%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+  background: linear-gradient(135deg, #bfdcf4 0%, #b8d3f1 100%);
+  box-shadow: 1px 2px 0px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+
+#h1formaluno {
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+  font-family: "Segoe UI";
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.906);
+  font-size: 35px;
+  margin-top: 2%;
+}
+
+#lbusuario {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: -1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+
+#ipusuario {
+  width: 70%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  outline: none;
+}
+
+#ipusuario:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgb(56, 181, 34);
+}
+
+#lbemail {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: -1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+
+#ipemail {
+  width: 70%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  outline: none;
+}
+
+#ipemail:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgb(56, 181, 34);
+}
+
+.senha-container {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.senha-item {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+}
+
+#lbsenha,
+#lbconfsenha {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+
+#ipsenha,
+#ipconfsenha {
+  width: 100%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 10px 0;
+  border-style: none;
+  outline: none;
+}
+
+.senha-input-container {
+  position: relative;
+  width: 100%;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: 224874;
+}
+
+#lbcodigo {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: -1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+
+#ipcodigo {
+  width: 70%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  outline: none;
+}
+
+#ipcodigo:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgb(56, 181, 34);
+}
+
+#lbcurso {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: -1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+
+#slccurso {
+  width: 70%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  outline: none;
+}
+
+#slccurso:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgb(56, 181, 34);
+}
+#btncadastrar {
+  position: relative;
+  margin: 2% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 35px;
+  border-radius: 20px;
+  outline-style: none;
+  border-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.4s;
+  box-shadow: 1px 4px 0px 3px rgba(0, 0, 0, 0.5);
+  gap: 5px;
+}
+
+#btncadastrar:hover {
+  transform: scale(1.05);
+}
+
+#btncadastrar:focus {
+  transform: scale(0.9);
+}
+
+#h1cadastro {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  color: #224874;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+#btnlogar {
+  position: relative;
+  margin: 1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 30px;
+  border-radius: 15px;
+  outline-style: none;
+  border-style: none;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.4s;
+  box-shadow: 1px 4px 0px 3px rgba(0, 0, 0, 0.5);
+  gap: 3px;
+}
+
+#btnlogar:hover {
+  transform: scale(1.05);
+}
+
+#btnlogar:focus {
+  transform: scale(0.9);
+}
+
+@media (max-width: 1150px) {
+  #containerform {
+    flex-direction: column;
+    height: auto;
+    min-height: 800px;
+    padding: 20px 0;
+    margin-top: 5%;
+  }
+
+  #aluno {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+
+  #aluno {
+    order: 1;
+    margin: 20px auto;
+    box-shadow: 1px 2px 0px 8px rgba(0, 0, 0, 0.5);
+    height: 750px;
+  }
+
+  #h1form {
+    margin-top: 0;
+  }
+
+  #btnentrar {
+    position: relative;
+    left: auto;
+    right: auto;
+    margin: 5% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lbusuario,
+  #lbsenha,
+  #lbcodigo,
+  #lbemail,
+  #lbconfsenha,
+  #lbcurso {
+    font-size: 20px;
+    margin: -1% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #ipusuario,
+  #ipsenha,
+  #ipcodigo,
+  #ipemail,
+  #slccurso {
+    font-size: 18px;
+    width: 50%;
+    height: 30px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #h1cadastro {
+    margin-top: 30px;
+  }
+
+  .senha-container {
+    flex-direction: column;
+    width: 80%;
+  }
+
+  .senha-item {
+    width: 100%;
+  }
+
+  #ipsenha,
+  #ipconfsenha {
+    width: 100%;
+  }
+}
+
+@media (max-width: 750px) {
+  #ipcodigo {
+    margin-bottom: 40px;
+  }
+  
+  #lbusuario,
+  #lbsenha,
+  #lbcodigo,
+  #lbemail,
+  #lbconfsenha,
+  #lbcurso {
+    font-size: 18px;
+  }
+  
+  #ipusuario,
+  #ipcodigo,
+  #ipemail,
+  #slccurso {
+    font-size: 16px;
+    width: 60%;
+  }
+  
+  #slccurso {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  #topo {
+    height: 60px;
+  }
+
+  #topo2 {
+    top: 56px;
+  }
+
+  #logo {
+    width: 150px;
+  }
+
+  #containerform {
+    margin-top: 50px;
+    display: flex;
+  }
+
+  #h1formaluno {
+    font-size: 28px;
+  }
+
+  #btnentrar {
+    position: relative;
+    left: auto;
+    right: auto;
+    margin: 5% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lbusuario,
+  #lbsenha,
+  #lbcodigo,
+  #lbemail,
+  #lbconfsenha,
+  #lbcurso {
+    font-size: 18px;
+    margin: -1.5% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #ipusuario,
+  #ipcodigo,
+  #ipemail,
+  #slccurso {
+    font-size: 16px;
+    width: 80%;
+    height: 35px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #ipcodigo {
+    margin-bottom: 20px;
+  }
+  
+  #slccurso {
+    margin-bottom: 40px;
+  }
+  
+  #ipsenha {
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lbsenha,
+  #lbconfsenha {
+    font-size: 18px;
+  }
+
+  .senha-container {
+    margin-bottom: 5px;
+  }
+}

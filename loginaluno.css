@@ -1,0 +1,724 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#topo {
+  width: 100%;
+  height: 9%;
+  background-color: #245dc6;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding: 0 2%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#topo2 {
+  width: 100%;
+  height: 1%;
+  background-color: #219adb;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  z-index: 999;
+}
+
+#logo {
+  width: 190px;
+  height: auto;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+body {
+  background-color: #56adef;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+#containerform {
+  width: 80%;
+  height: 620px;
+  margin-right: auto;
+  margin-top: 5%;
+  background: linear-gradient(135deg, #7cb9ec 0%, #62a6f5 100%);
+  box-shadow: 1px 3px 8px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  position: absolute;
+  display: flex;
+}
+
+#h1form {
+  text-align: center;
+  margin-bottom: 30px;
+  color: aliceblue;
+  font-family: "Segoe UI";
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  font-size: 35px;
+  margin-top: -5%;
+}
+
+#boneco {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.boneco {
+  position: relative;
+  width: 180px;
+  height: 330px;
+  transform-style: preserve-3d;
+  animation: flutuar 6s infinite ease-in-out;
+}
+
+.cabeca {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background-color: #ffd3b4;
+  border-radius: 50%;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.olho {
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  background-color: #333;
+  border-radius: 50%;
+  top: 33px;
+}
+
+.olho-esquerdo {
+  left: 20px;
+}
+
+.olho-direito {
+  right: 20px;
+}
+
+.sobrancelha {
+  position: absolute;
+  width: 16px;
+  height: 3px;
+  background-color: #333;
+  top: 25px;
+}
+
+.sobrancelha-esquerda {
+  left: 16px;
+  transform: rotate(-5deg);
+}
+
+.sobrancelha-direita {
+  right: 16px;
+  transform: rotate(5deg);
+}
+
+.boca {
+  position: absolute;
+  width: 33px;
+  height: 8px;
+  border-bottom: 3px solid #e75480;
+  border-radius: 0 0 50% 50%;
+  top: 58px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: falar 1s forwards;
+}
+
+.aluno .cabelo {
+  position: absolute;
+  width: 90px;
+  height: 45px;
+  background-color: #555;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 20px 20px 0 0;
+  z-index: 2;
+}
+
+.aluno .cabelo::after {
+  content: "";
+  position: absolute;
+  width: 72px;
+  height: 18px;
+  background-color: #555;
+  top: 18px;
+  left: 9px;
+  border-radius: 9px;
+}
+
+.corpo {
+  position: absolute;
+  width: 74px;
+  height: 132px;
+  top: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  border-radius: 0 0 12px 12px;
+  overflow: hidden;
+}
+
+.corpo::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.aluno .corpo {
+  background: #3498db;
+}
+
+.aluno .corpo::after {
+  content: "";
+  position: absolute;
+  width: 54px;
+  height: 18px;
+  background-color: rgba(255, 255, 255, 0.3);
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 9px;
+}
+
+.aluno .corpo .bolso {
+  position: absolute;
+  width: 27px;
+  height: 18px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  border-radius: 5px;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.braco {
+  position: absolute;
+  width: 25px;
+  height: 100px;
+  top: 90px;
+  z-index: 1;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.braco-esquerdo {
+  right: 15px;
+  transform: rotate(-20deg);
+  animation: braco-esquerdo-mover 5s infinite ease-in-out;
+}
+
+.braco-direito {
+  left: 15px;
+  transform: rotate(20deg);
+  animation: braco-direito-mover 4s infinite ease-in-out;
+}
+
+.braco::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 8px;
+  background-color: inherit;
+  border-radius: 4px;
+  top: 33px;
+  transform: rotate(90deg);
+}
+
+.braco::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 41px;
+  background-color: inherit;
+  top: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.antebraco {
+  position: absolute;
+  width: 21px;
+  height: 58px;
+  background-color: inherit;
+  bottom: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.aluno .braco {
+  background: #2980b9;
+}
+
+.aluno .braco::before,
+.aluno .antebraco {
+  background: #1a5276;
+}
+
+.mao {
+  position: absolute;
+  width: 25px;
+  height: 12px;
+  background-color: #ffd3b4;
+  bottom: -7px;
+  border-radius: 7px 7px 0 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3px;
+}
+
+.dedo {
+  width: 3px;
+  height: 8px;
+  background-color: #ffd3b4;
+  margin-top: 4px;
+}
+
+.perna-container {
+  position: absolute;
+  width: 74px;
+  height: 115px;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+}
+
+.perna {
+  position: relative;
+  width: 25px;
+  height: 115px;
+  background-color: inherit;
+  z-index: 1;
+  border-radius: 0 0 8px 8px;
+}
+
+.perna::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 8px;
+  background-color: inherit;
+  top: 25px;
+  border-radius: 4px;
+}
+
+.coxa {
+  position: absolute;
+  width: 25px;
+  height: 41px;
+  background-color: inherit;
+  top: 0;
+  border-radius: 8px 8px 0 0;
+}
+
+.canela {
+  position: absolute;
+  width: 21px;
+  height: 74px;
+  background-color: inherit;
+  bottom: 0;
+  border-radius: 0 0 8px 8px;
+}
+
+.pe {
+  position: absolute;
+  width: 21px;
+  height: 8px;
+  background-color: #333;
+  bottom: -7px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+}
+
+.perna-esquerda {
+  transform: rotate(5deg);
+  animation: perna-esquerda-mover 7s infinite ease-in-out;
+}
+
+.perna-direita {
+  transform: rotate(-5deg);
+  animation: perna-direita-mover 6s infinite ease-in-out;
+}
+
+.aluno .perna,
+.aluno .coxa,
+.aluno .canela {
+  background: #3498db;
+}
+
+@keyframes flutuar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes falar {
+  0% {
+    height: 8px;
+    border-bottom-width: 3px;
+  }
+  50% {
+    height: 4px;
+    border-bottom-width: 4px;
+  }
+  100% {
+    height: 8px;
+    border-bottom-width: 3px;
+  }
+}
+
+@keyframes braco-esquerdo-mover {
+  0%,
+  100% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(-25deg);
+  }
+}
+
+@keyframes braco-direito-mover {
+  0%,
+  100% {
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(25deg);
+  }
+}
+
+@keyframes perna-esquerda-mover {
+  0%,
+  100% {
+    transform: rotate(5deg);
+  }
+  50% {
+    transform: rotate(8deg);
+  }
+}
+
+@keyframes perna-direita-mover {
+  0%,
+  100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(-8deg);
+  }
+}
+
+#aluno {
+  width: 50%;
+  height: 94%;
+  margin-top: 1%;
+  margin-right: 2%;
+  background: linear-gradient(135deg, #bfdcf4 0%, #b8d3f1 100%);
+  box-shadow: 1px 2px 0px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+}
+#h1formaluno {
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+  font-family: "Segoe UI";
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.906);
+  font-size: 35px;
+  margin-top: 1.5%;
+}
+#lbusuario {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: -1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+#ipusuario {
+  width: 70%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  outline: none;
+}
+#ipusuario:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgb(56, 181, 34);
+}
+#lbsenha {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: -1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+#ipsenha {
+  width: 70%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  outline: none;
+}
+#ipsenha:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgb(56, 181, 34);
+}
+#lbcodigo {
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Segoe UI";
+  margin: -1% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  color: #224874;
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.884);
+}
+#ipcodigo {
+  width: 70%;
+  padding: 7px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: 450;
+  font-family: "Segoe UI";
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  outline: none;
+}
+#ipcodigo:focus {
+  outline-style: solid;
+  outline-width: 2px;
+  outline-color: rgb(56, 181, 34);
+}
+#btnentrar {
+  position: relative;
+  margin: 5% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 45px;
+  border-radius: 20px;
+  outline-style: none;
+  border-style: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: all 0.4s;
+  box-shadow: 1px 4px 0px 3px rgba(0, 0, 0, 0.5);
+  gap: 5px;
+}
+#btnentrar:hover {
+  transform: scale(1.05);
+}
+#btnentrar:focus {
+  transform: scale(0.9);
+}
+#h1cadastro {
+  font-family: "Segoe UI", sans-serif;
+  font-size: 12px;
+  color: #224874;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+#btncadastrar {
+  position: relative;
+  margin: 2% auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 105px;
+  height: 30px;
+  border-radius: 15px;
+  outline-style: none;
+  border-style: none;
+  font-size: 12px;
+  font-weight: bold;
+  transition: all 0.4s;
+  box-shadow: 1px 4px 0px 3px rgba(0, 0, 0, 0.5);
+  gap: 3px;
+}
+#btncadastrar:hover {
+  transform: scale(1.05);
+}
+#btncadastrar:focus {
+  transform: scale(0.9);
+}
+@media (max-width: 1150px) {
+  #containerform {
+    flex-direction: column;
+    height: auto;
+    padding: 20px 0;
+    width: 90%;
+    max-width: 500px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  #boneco {
+    display: none;
+  }
+
+  #aluno {
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 1px 2px 0px 8px rgba(0, 0, 0, 0.5);
+    height: auto;
+    padding: 20px 0;
+  }
+
+  #h1form {
+    display: none;
+  }
+
+  #btnentrar {
+    position: relative;
+    left: auto;
+    right: auto;
+    margin: 5% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lbusuario,
+  #lbsenha,
+  #lbcodigo {
+    font-size: 20px;
+    margin: -1% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #ipusuario,
+  #ipsenha,
+  #ipcodigo {
+    font-size: 18px;
+    width: 70%;
+    height: 40px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #h1cadastro {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  #topo {
+    height: 60px;
+  }
+
+  #topo2 {
+    top: 56px;
+  }
+
+  #logo {
+    width: 150px;
+  }
+
+  #containerform {
+    margin-top: 60px; /* Ajustado para subir o container no mobile */
+    width: 95%;
+    padding: 15px 0;
+  }
+
+  #h1formaluno {
+    font-size: 28px;
+    margin-top: 0;
+  }
+
+  #btnentrar {
+    position: relative;
+    left: auto;
+    right: auto;
+    margin: 5% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #lbusuario,
+  #lbsenha,
+  #lbcodigo {
+    font-size: 18px;
+    margin: -1% auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #ipusuario,
+  #ipsenha,
+  #ipcodigo {
+    font-size: 16px;
+    width: 80%;
+    height: 40px;
+    margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

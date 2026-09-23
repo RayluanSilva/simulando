@@ -1,0 +1,871 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#topo {
+  width: 100%;
+  height: 9%;
+  background-color: #245dc6;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding: 0 2%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#topo2 {
+  width: 100%;
+  height: 1%;
+  background-color: #219adb;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  z-index: 999;
+}
+
+#logo {
+  width: 190px;
+  height: auto;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+#nav {
+  display: flex;
+  margin-left: 25%;
+  margin-top: 1%;
+  align-items: center;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  position: relative;
+  color: aliceblue;
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 103%;
+  height: 3px;
+  background-color: #74be6c;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+nav a:hover {
+  color: #74be6c;
+}
+
+.container-entrar {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  cursor: pointer;
+  transform: translateX(-20px);
+}
+
+.botao-entrar,
+.container-entrar a.botao-entrar {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 12px 30px 12px 70px;
+  border-radius: 35px;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  min-width: 150px;
+  text-decoration: none;
+  margin-top: 10%;
+}
+
+.botao-entrar {
+  margin-left: -70%;
+}
+.moldura-porta {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  width: 35px;
+  height: 45px;
+  background-color: #333;
+  border-radius: 4px;
+  transform: translateY(-50%);
+  z-index: 1;
+  margin-top: 2%;
+}
+
+.porta {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  width: 35px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  transition: transform 0.4s ease-out;
+  z-index: 2;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+  margin-top: 2%;
+}
+
+.porta::before {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #999;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.boneco {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  width: 25px;
+  height: 35px;
+  transform: translateY(-50%);
+  z-index: 3;
+  opacity: 1;
+  transition: all 0.6s ease-out;
+  margin-top: 2%;
+}
+
+.boneco::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.boneco::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 17px;
+  height: 20px;
+  background-color: white;
+  border-radius: 3px;
+  transform: translateX(-50%);
+}
+
+.container-entrar:hover .porta {
+  transform: translateY(-50%) rotateY(70deg);
+}
+
+.container-entrar:hover .boneco {
+  left: 55px;
+  opacity: 1;
+}
+
+.botao-entrar:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 75px;
+}
+
+.container-entrar.clicado .boneco {
+  left: 30px;
+  transition: all 0.6s ease-out;
+}
+
+.container-entrar.clicado .porta {
+  transform: translateY(-50%) rotateY(0deg);
+  transition: transform 0.5s ease-out;
+}
+
+body {
+  background-color: #56adef;
+}
+
+#containerprincipal {
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #4787bb 0%, #3a86bc 100%);
+  overflow: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+#h1containerprincipal {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: aliceblue;
+  margin-top: 30px;
+}
+
+#pcontainerprincipal {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: aliceblue;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+#visaogeral {
+  width: 30%;
+  height: 63%;
+  background-color: #c9e0f8;
+  border-radius: 24px;
+  margin-left: 2%;
+  margin-top: 2%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+#visaogeralconteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 80px;
+}
+
+#divconteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.4s;
+}
+#divconteudo:hover {
+  transform: scale(1.05);
+}
+
+#titulo {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  color: #333;
+  font-size: 16px;
+}
+
+#conteudo {
+  font-family: "Segoe UI", sans-serif;
+  color: #245dc6;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+#visaogeral h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#visaogeral i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+#questoes {
+  width: 30%;
+  height: 63%;
+  background-color: #c9e0f8;
+  border-radius: 24px;
+  margin-left: 2.5%;
+  margin-top: 2%;
+  float: left;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+#questoes h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#questoes i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+.questoesconteudo {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    padding: 0 20px;
+    max-height: 270px;
+    overflow-y: auto; 
+}
+
+.questoesconteudo::-webkit-scrollbar {
+    width: 6px;
+}
+
+.questoesconteudo::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.questoesconteudo::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.questoesconteudo::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.questaoitem {
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 12px 15px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.4s;
+}
+.questaoitem:hover {
+  transform: scale(1.05);
+}
+
+.questaotitulo {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.questaodata {
+  font-family: "Segoe UI", sans-serif;
+  color: #245dc6;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+}
+
+.questaodisciplina {
+  font-family: "Segoe UI", sans-serif;
+  color: #666;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+#desempenho {
+  width: 30%;
+  height: 63%;
+  background-color: #c9e0f8;
+  border-radius: 24px;
+  margin-right: 3%;
+  margin-top: 2%;
+  float: right;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+#desempenhoconteudo {
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  transition: all 0.4s;
+}
+
+#desempenhoitem {
+  margin-bottom: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 12px 15px;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  transition: all 0.4s;
+}
+
+#desempenhoitem:hover {
+  transform: scale(1.05);
+}
+
+#desempenhoturma {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+#desempenhonota {
+  font-family: "Segoe UI", sans-serif;
+  color: #245dc6;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+}
+
+#desempenhodata {
+  font-family: "Segoe UI", sans-serif;
+  color: #666;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+#barra {
+  width: 100%;
+  height: 9px;
+  background: linear-gradient(135deg, #2d6fa4 0%, #1d547b 100%);
+  border-radius: 24px 24px 0 0;
+  top: 0;
+  z-index: 1;
+}
+
+#desempenho h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#desempenho i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+#visaogeral:hover,
+#questoes:hover,
+#desempenho:hover {
+  transform: scale(1.05);
+}
+
+#visaogeral h1,
+#questoes h1,
+#desempenho h1,
+#visaogeral i,
+#questoes i,
+#desempenho i {
+  transition: color 0.4s ease;
+}
+
+#visaogeral:hover h1,
+#questoes:hover h1,
+#desempenho:hover h1,
+#visaogeral:hover i,
+#questoes:hover i,
+#desempenho:hover i {
+  color: #4c81e3;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2000;
+  overflow: auto;
+}
+
+.popup-content {
+  background-color: #c9e0f8;
+  margin: 5% auto;
+  padding: 25px;
+  border-radius: 24px;
+  width: 70%;
+  max-width: 700px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  position: relative;
+}
+
+.close-popup {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #245dc6;
+  cursor: pointer;
+}
+
+.close-popup:hover {
+  color: #1d547b;
+}
+
+.popup-header {
+  margin-bottom: 20px;
+}
+
+.popup-titulo {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.popup-data {
+  font-family: "Segoe UI", sans-serif;
+  color: #245dc6;
+  font-weight: 600;
+  font-size: 14px;
+  display: block;
+}
+
+.popup-disciplina {
+  font-family: "Segoe UI", sans-serif;
+  color: #666;
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+.popup-body {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #2d6fa4;
+}
+
+.popup-body h3 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  color: #000000;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.popup-enunciado p {
+  font-family: "Segoe UI", sans-serif;
+  color: #333;
+  margin-bottom: 20px;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 12px 15px;
+  border-radius: 10px;
+}
+
+.alternativas-container {
+  margin-bottom: 20px;
+}
+
+.alternativa {
+  font-family: "Segoe UI", sans-serif;
+  color: #000000;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 12px 15px;
+  margin-bottom: 8px;
+  border-radius: 10px;
+}
+
+.popup-resposta {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: #155724;
+  background-color: rgba(116, 190, 108, 0.3);
+  padding: 12px 15px;
+  border-radius: 10px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .popup-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-content {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #topo {
+    flex-direction: column;
+    padding: 15px;
+    height: auto;
+    gap: 10px;
+  }
+
+  #nav {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #topo2 {
+    top: auto;
+    position: relative;
+    margin-top: 15px;
+  }
+
+  .container-entrar {
+    margin-left: 15%;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  #containerprincipal {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+    padding: 20px;
+  }
+
+  #visaogeral,
+  #desempenho,
+  #questoes {
+    width: 100%;
+    height: auto;
+    min-height: 300px;
+    margin: 20px 0;
+    float: none;
+  }
+
+  #visaogeralconteudo {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 771px) {
+  #topo {
+    flex-direction: column;
+    padding: 15px;
+    height: auto;
+    gap: 15px;
+  }
+
+  #nav {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #topo2 {
+    top: auto;
+    position: relative;
+    margin-top: 15px;
+  }
+
+  .container-entrar {
+    margin-left: 15%;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  #containerprincipal {
+    position: relative;
+    top: auto;
+    margin-top: 35%;
+  }
+
+  #h1containerprincipal {
+    font-size: 24px;
+  }
+
+  #pcontainerprincipal {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container-entrar {
+    margin-left: 15%;
+  }
+  #containerprincipal {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 15px;
+    margin-top: 20%;
+  }
+
+  #h1containerprincipal {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+
+  #pcontainerprincipal {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  #visaogeral h1,
+  #desempenho h1,
+  #questoes h1 {
+    font-size: 18px;
+  }
+
+  #titulo,
+  #conteudo {
+    font-size: 14px;
+  }
+
+  .questao-titulo {
+    font-size: 14px;
+  }
+
+  .questaodata,
+  .questaodisciplina {
+    font-size: 12px;
+  }
+
+  #desempenhoturma {
+    font-size: 14px;
+  }
+
+  #desempenhonota,
+  #desempenhodata {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container-entrar {
+    margin-left: 30%;
+  }
+  #containerprincipal {
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-entrar {
+    margin-left: 30%;
+  }
+  #containerprincipal {
+    margin-top: 28%;
+  }
+}
+
+@media (max-width: 446px) {
+  .container-entrar {
+    margin-left: 30%;
+  }
+  #containerprincipal {
+    margin-top: 28%;
+  }
+}
+
+@media (max-width: 400px) {
+  .container-entrar {
+    margin-left: 35%;
+  }
+  #containerprincipal {
+    margin-top: 28%;
+  }
+
+  #divconteudo {
+    padding: 8px 10px;
+  }
+
+  #titulo,
+  #conteudo {
+    font-size: 12px;
+  }
+
+  .questaoitem {
+    padding: 8px 10px;
+  }
+
+  .questaotitulo,
+  .questaodata,
+  .questaodisciplina {
+    font-size: 12px;
+  }
+
+  .desempenho-item {
+    padding: 8px 10px;
+  }
+
+  #desempenhoturma,
+  #desempenhonota,
+  #desempenhodata {
+    font-size: 12px;
+  }
+}

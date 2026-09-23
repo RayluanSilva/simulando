@@ -1,0 +1,891 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#topo {
+  width: 100%;
+  height: 9%;
+  background-color: #245dc6;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding: 0 2%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#topo2 {
+  width: 100%;
+  height: 1%;
+  background-color: #219adb;
+  position: fixed;
+  top: 65px;
+  left: 0;
+  z-index: 999;
+}
+
+#logo {
+  width: 190px;
+  height: auto;
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+#nav {
+  display: flex;
+  margin-left: 25%;
+  margin-top: 1%;
+  align-items: center;
+  width: 100%;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  position: relative;
+  color: aliceblue;
+  text-decoration: none;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 103%;
+  height: 3px;
+  background-color: #74be6c;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+nav a:hover {
+  color: #74be6c;
+}
+
+.container-entrar {
+  position: relative;
+  display: inline-block;
+  margin-left: auto;
+  cursor: pointer;
+  transform: translateX(-20px);
+}
+
+.botao-entrar,
+.container-entrar a.botao-entrar {
+  display: inline-block;
+  position: relative;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 12px 30px 12px 70px;
+  border-radius: 35px;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 1;
+  min-width: 150px;
+  text-decoration: none;
+  margin-top: 10%;
+}
+
+.botao-entrar {
+  margin-left: -70%;
+}
+
+.moldura-porta {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  width: 35px;
+  height: 45px;
+  background-color: #333;
+  border-radius: 4px;
+  transform: translateY(-50%);
+  z-index: 1;
+  margin-top: 2%;
+}
+
+.porta {
+  position: absolute;
+  left: 25px;
+  top: 50%;
+  width: 35px;
+  height: 45px;
+  background-color: #fff;
+  border-radius: 3px;
+  transform: translateY(-50%);
+  transform-origin: left center;
+  transition: transform 0.4s ease-out;
+  z-index: 2;
+  box-shadow: 1px 0 3px rgba(0, 0, 0, 0.2);
+  margin-top: 2%;
+}
+
+.porta::before {
+  content: "";
+  position: absolute;
+  right: 7px;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  background-color: #999;
+  border-radius: 50%;
+  transform: translateY(-50%);
+}
+
+.boneco {
+  position: absolute;
+  left: 30px;
+  top: 50%;
+  width: 25px;
+  height: 35px;
+  transform: translateY(-50%);
+  z-index: 3;
+  opacity: 1;
+  transition: all 0.6s ease-out;
+  margin-top: 2%;
+}
+
+.boneco::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+
+.boneco::after {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 17px;
+  height: 20px;
+  background-color: white;
+  border-radius: 3px;
+  transform: translateX(-50%);
+}
+
+.container-entrar:hover .porta {
+  transform: translateY(-50%) rotateY(70deg);
+}
+
+.container-entrar:hover .boneco {
+  left: 55px;
+  opacity: 1;
+}
+
+.botao-entrar:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-left: 75px;
+}
+
+.container-entrar.clicado .boneco {
+  left: 30px;
+  transition: all 0.6s ease-out;
+}
+
+.container-entrar.clicado .porta {
+  transform: translateY(-50%) rotateY(0deg);
+  transition: transform 0.5s ease-out;
+}
+
+body {
+  background-color: #56adef;
+}
+
+#containerprincipal {
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  height: auto;
+  position: absolute;
+  top: 15%;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #4787bb 0%, #3a86bc 100%);
+  overflow: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  padding-bottom: 30px;
+}
+
+#h1containerprincipal {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  color: aliceblue;
+  margin-top: 30px;
+}
+
+#pcontainerprincipal {
+  text-align: center;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: normal;
+  font-size: 18px;
+  color: aliceblue;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.tabs {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: center;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 0 20px 30px;
+}
+
+.tab-button {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 30px;
+  transition: all 0.3s;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  border-radius: 8px;
+  margin: 0 5px;
+  border: 2px solid transparent;
+}
+
+.tab-button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: scale(1.05);
+}
+
+.tab-button.active {
+  background-color: #74be6c;
+  color: white;
+}
+
+.tab-content {
+  width: 94%;
+  height: auto;
+  background-color: #c9e0f8;
+  border-radius: 24px;
+  margin: 2% auto;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s;
+  padding-bottom: 20px;
+  min-height: 300px;
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+#barra {
+  width: 100%;
+  height: 9px;
+  background: linear-gradient(135deg, #2d6fa4 0%, #1d547b 100%);
+  border-radius: 24px 24px 0 0;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.tab-content h1 {
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  text-align: center;
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+.tab-content h1 i {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
+.tab-content:hover {
+  transform: scale(1.02);
+}
+
+.tab-content:hover h1,
+.tab-content:hover h1 i {
+  color: #4c81e3;
+}
+
+.secao-filtro {
+  background: linear-gradient(135deg, #64abe5 0%, #58b9fe 100%);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 80px 20px 25px;
+}
+
+.secao-filtro h2 {
+  color: aliceblue;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.filtro-group {
+  display: inline-block;
+  margin-right: 25px;
+  margin-bottom: 10px;
+}
+
+.filtro-group label {
+  font-weight: bold;
+  color: aliceblue;
+  margin-right: 8px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 16px;
+}
+
+.filtro-group select {
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: white;
+  color: #333;
+  min-width: 180px;
+}
+
+.secao-tabela {
+  background: linear-gradient(135deg, #64abe5 0%, #58b9fe 100%);
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px;
+}
+
+.secao-tabela h2 {
+  color: aliceblue;
+  font-size: 20px;
+  margin-bottom: 20px;
+  font-family: "Segoe UI", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+table thead th {
+  background-color: #74be6c;
+  color: white;
+  padding: 16px 20px;
+  text-align: left;
+  font-size: 16px;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+}
+
+table tbody tr {
+  border-bottom: 1px solid #e0e0e0;
+  transition: all 0.3s;
+}
+
+table tbody tr:hover {
+  background-color: #f0f7ff;
+  transform: scale(1.005);
+}
+
+table tbody tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+table tbody tr:nth-child(even):hover {
+  background-color: #f0f7ff;
+}
+
+table tbody td {
+  padding: 14px 20px;
+  color: #333;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 15px;
+}
+
+.btn-acao {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 8px;
+  transition: all 0.3s;
+  font-family: "Segoe UI", sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.btn-editar {
+  background-color: #74be6c;
+  color: white;
+}
+
+.btn-editar:hover {
+  background-color: #6db765;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(41, 128, 185, 0.3);
+}
+
+.btn-excluir {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.btn-excluir:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(192, 57, 43, 0.3);
+}
+
+.secao-cadastro {
+  padding: 25px;
+  background: linear-gradient(135deg, #64abe5 0%, #58b9fe 100%);
+  border-radius: 10px;
+  margin: 80px 20px 20px;
+}
+
+.secao-cadastro h2 {
+  color: aliceblue;
+  margin-bottom: 25px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cadastro-opcoes {
+  margin-bottom: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn-cadastro {
+  background-color: #2ecc71;
+  color: white;
+  padding: 14px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s;
+}
+
+.btn-cadastro:hover {
+  background-color: #27ae60;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 204, 113, 0.3);
+}
+
+.cadastro-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 450px;
+  margin: 0 auto;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: aliceblue;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cadastro-form h3 {
+  color: #000;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 12px;
+  margin-bottom: 15px;
+  font-family: "Segoe UI", sans-serif;
+  font-size: 20px;
+  text-align: center;
+}
+
+.cadastro-form input[type="text"],
+.cadastro-form input[type="email"],
+.cadastro-form input[type="password"],
+.cadastro-form input[type="number"],
+.cadastro-form select {
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 2px solid #5c5c5c;
+  font-size: 16px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: white;
+  transition: all 0.3s;
+}
+
+.cadastro-form input[type="text"]:focus,
+.cadastro-form input[type="email"]:focus,
+.cadastro-form input[type="password"]:focus,
+.cadastro-form input[type="number"]:focus,
+.cadastro-form select:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(36, 93, 198, 0.1);
+}
+
+.btn-salvar {
+  background-color: #74be6c;
+  color: white;
+  padding: 14px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: "Segoe UI", sans-serif;
+  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.3s;
+  margin-top: 10px;
+}
+
+.btn-salvar:hover {
+  background-color: #175499;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(36, 93, 198, 0.3);
+}
+
+@media (max-width: 1024px) {
+  #topo {
+    flex-direction: column;
+    padding: 15px;
+    height: auto;
+    gap: 10px;
+  }
+
+  #nav {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #topo2 {
+    top: auto;
+    position: relative;
+    margin-top: 15px;
+  }
+
+  .container-entrar {
+    margin-left: 15%;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  #containerprincipal {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    height: auto;
+    padding: 20px;
+    top: 20%;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    margin: 0 10px 20px;
+  }
+
+  .tab-button {
+    margin-bottom: 10px;
+    padding: 12px 20px;
+    font-size: 16px;
+  }
+
+  .tab-content {
+    width: 96%;
+    margin: 10px auto;
+  }
+}
+
+@media (max-width: 771px) {
+  #topo {
+    flex-direction: column;
+    padding: 15px;
+    height: auto;
+    gap: 15px;
+  }
+
+  #nav {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  #topo2 {
+    top: auto;
+    position: relative;
+    margin-top: 15px;
+  }
+
+  .container-entrar {
+    margin-left: 15%;
+    transform: none;
+    margin-top: 15px;
+  }
+
+  #containerprincipal {
+    position: relative;
+    top: auto;
+    margin-top: 35%;
+  }
+
+  #h1containerprincipal {
+    font-size: 24px;
+  }
+
+  #pcontainerprincipal {
+    font-size: 16px;
+  }
+
+  .tab-content {
+    padding-top: 60px;
+  }
+
+  .filtro-group {
+    display: block;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .filtro-group select {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .secao-filtro,
+  .secao-cadastro {
+    margin: 80px 15px 25px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container-entrar {
+    margin-left: 15%;
+  }
+  
+  #containerprincipal {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    padding: 15px;
+    margin-top: 20%;
+  }
+
+  #h1containerprincipal {
+    font-size: 22px;
+    margin-top: 15px;
+  }
+
+  #pcontainerprincipal {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-button {
+    width: 90%;
+    margin: 5px 0;
+    border-radius: 8px;
+  }
+
+  table thead {
+    display: none;
+  }
+
+  table, table tbody, table tr, table td {
+    display: block;
+    width: 100%;
+  }
+
+  table tr {
+    margin-bottom: 15px;
+    border: 2px solid #5c5c5c;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+  }
+
+  table td:last-child {
+    border-bottom: 0;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+    text-align: left;
+    color: #245dc6;
+  }
+
+  .btn-acao {
+    margin-top: 5px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cadastro-opcoes {
+    flex-direction: column;
+  }
+
+  .btn-cadastro {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cadastro-form {
+    padding: 15px;
+  }
+
+  .secao-filtro,
+  .secao-tabela,
+  .secao-cadastro {
+    margin: 80px 10px 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .container-entrar {
+    margin-left: 30%;
+  }
+  
+  #containerprincipal {
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-entrar {
+    margin-left: 30%;
+  }
+  
+  #containerprincipal {
+    margin-top: 28%;
+  }
+
+  table td {
+    padding-left: 40%;
+  }
+
+  table td::before {
+    width: 40%;
+  }
+
+  .btn-salvar, .btn-cadastro {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 446px) {
+  .container-entrar {
+    margin-left: 30%;
+  }
+  
+  #containerprincipal {
+    margin-top: 28%;
+  }
+}
+
+@media (max-width: 400px) {
+  .container-entrar {
+    margin-left: 35%;
+  }
+  
+  #containerprincipal {
+    margin-top: 28%;
+  }
+
+  #h1containerprincipal {
+    font-size: 20px;
+  }
+
+  #pcontainerprincipal {
+    font-size: 13px;
+  }
+
+  .cadastro-form input,
+  .cadastro-form select {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .secao-filtro h2,
+  .secao-tabela h2,
+  .secao-cadastro h2 {
+    font-size: 18px;
+  }
+}
